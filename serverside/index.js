@@ -1,12 +1,10 @@
-import express from 'express';
-// import Home from "./src/Pages/Home"
+import express from "express";
+import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
+app.use(express.json());
 
-// app.get("/", (re, res) => {
-//     res.send("<Home />")
-// });
+// Use the routes
+app.use("/api/users", userRoutes);
 
-app.listen(3000, () => {
-    console.log("server is runnig on port 3000");
-}); 
+app.listen(3000, () => console.log("✅ Server running on http://localhost:3000"));
